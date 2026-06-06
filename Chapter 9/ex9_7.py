@@ -27,14 +27,23 @@ class User:
     def reset_login_method(self):
         """Reset the login attempts to 0."""
         self.login_attempts = 0
+class Admin(User):
+    """Admin Profile"""
+    def __init__(self,first_name,last_name):
+        super().__init__(first_name,last_name)
+        self.privileges = [
+            "can add post",
+            "can delete post",
+        "can ban user"]
 
-user1 = User("Talha","Ahmed")
-user1.attempts()
-user1.increment_login_attempt()
-user1.increment_login_attempt()
-user1.increment_login_attempt()
-user1.increment_login_attempt()
-user1.attempts()
-user1.reset_login_method()
-user1.attempts()
+    def show_privilges(self):
+        print("An administrator can:")
+        for privilege in self.privileges:
+            print(privilege)
+Admin1 = Admin(first_name="Talha ",last_name="Ahmed")
+print(Admin1.describe_user())
+Admin1.show_privilges()
+
+
+
 
