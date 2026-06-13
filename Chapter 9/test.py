@@ -1,5 +1,21 @@
-from ex9_9 import Car,ElectricCar
-my_new_car = Car('audi', 'a4', 2016)
-print(my_new_car.get_descriptive_name())
-my_new_car.odometer_reading = 23
-my_new_car.read_odometer()
+class BankAccount:
+    def __init__(self, account_holder):
+        self.account_holder = account_holder
+        self.balance = 0
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        self.balance -= amount
+
+    def show_balance(self):
+        print(f"Balance: ${self.balance}")
+
+
+account = BankAccount("Talha")
+
+account.deposit(500)
+account.withdraw(100)
+
+account.show_balance()
